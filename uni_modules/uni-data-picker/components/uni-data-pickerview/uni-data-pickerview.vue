@@ -3,9 +3,12 @@
     <scroll-view v-if="!isCloudDataList" class="selected-area" scroll-x="true">
       <view class="selected-list">
         <template v-for="(item,index) in selected">
-          <view class="selected-item"
+          <view
+						class="selected-item"
             :class="{'selected-item-active':index==selectedIndex}"
-            v-if="item.text" @click="handleSelect(index)">
+            v-if="item.text"
+						:key="index"
+						@click="handleSelect(index)">
             <text>{{item.text}}</text>
           </view>
         </template>
